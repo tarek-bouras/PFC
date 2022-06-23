@@ -1,0 +1,147 @@
+{%load static%}
+{% block contenteee %}
+<div class="tab-content navv" id="v-pills-tabContent">
+<div class="tab-pane fade" id="v-pills-stats" role="tabpanel" aria-labelledby="v-pills-stats-tab" tabindex="0">
+   
+   <div class="card" style="margin: 3%;">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 text-center">
+              <h2 class="display-6" style="color: white;">Graphes des bars pour le premier modèle</h2>
+              <h3 class="display-9" style="color: white;"> Nombres des ventes pour la collection Clients</h3>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row" style="padding-top: 2%;padding-bottom: 3%;">
+                <div class="col-md-3 text-center">
+                  <form action="{% url 'stat' %}" method="post">
+                    {% csrf_token %}
+                      <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Gnere</button>
+                  </form>
+                </div>
+                <div class="col-md-3 text-center">
+                  <form action="{% url 'stat2' %}" method="post">
+                    {% csrf_token %}
+                      <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Wilaya</button>
+                  </form>
+                </div>
+                <div class="col-md-3 text-center">
+                  <form action="{% url 'stat3' %}" method="post">
+                    {% csrf_token %}
+                      <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Date</button>
+                  </form>
+                </div>  
+                <div class="col-md-3 text-center">
+                  <form action="{% url 'stat4' %}" method="post">
+                    {% csrf_token %}
+                      <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Type</button>
+                  </form>
+                </div>
+        </div>
+    </div>
+    <div class="card" style="margin: 3%;">
+       <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10 text-center">
+            <h2 class="display-6" style="color: white;">Graphes circulaire pour le premier modèle</h2>
+            <h3 class="display-9" style="color: white;"> Chiffres d'affaires pour la collection Clients</h3>
+          </div>
+          <div class="col-md-1"></div>
+       </div>
+      <div class="row" style="padding-top: 2%;padding-bottom: 3%;">
+            <div class="col-md-4 text-center">
+              <form action="{% url 'stat5' %}" method="post">
+                {% csrf_token %}
+                  <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Genre</button>
+              </form>
+            </div>
+            <div class="col-md-4 text-center">
+              <form action="{% url 'stat6' %}" method="post">
+                {% csrf_token %}
+                  <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Wilaya</button>
+              </form>
+            </div>
+            <div class="col-md-4 text-center">
+            <form action="{% url 'stat7' %}" method="post">
+              {% csrf_token %}
+                <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Type</button>
+            </form>
+            </div>  
+       </div>
+    </div>
+    <div class="card" style="margin: 3%;">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 text-center">
+          <h2 class="display-6">
+            Graphes pour le deuxieme modèle 02. 
+          </h2>
+          <h3 class="display-9" style="color: white;"> 
+            les frais de livraisons pour la collection Clients
+          </h3>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <form action="{% url 'statl1' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Genre</button>
+          </form>
+        </div>
+        <div class="col-md-3">
+          <form action="{% url 'statl2' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Wilaya</button>
+          </form>
+        </div>
+        <div class="col-md-3">
+          <form action="{% url 'statl3' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Date</button>
+          </form>
+        </div>
+        <div class="col-md-3">
+          <form action="{% url 'statl4' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Type</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin: 3%;">
+       <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10 text-center">
+            <h2 class="display-6" style="color: white;">d'autres graphes pour le premier modèle</h2>
+          </div>
+          <div class="col-md-1"></div>
+       </div>
+      <div class="row" style="padding-top: 2%;padding-bottom: 3%;">
+            <div class="col-md-6 text-center">
+              <form action="{% url 'stat8' %}" method="post">
+                 {% csrf_token %}
+                  <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Type</button>
+              </form>
+            </div>
+            <div class="col-md-6 text-center">
+              <form action="{% url 'stat9' %}" method="post">
+                 {% csrf_token %}
+                  <button type="submit" class="btn " name="p" style="background-color: #068a06; color: white">Wilaya</button>
+              </form>
+            </div>
+            {% comment %} <div class="col-md-4 text-center">
+              <form action="{% url 'stat10' %}" method="post">
+                {% csrf_token %}
+                  <button type="submit" name="p" style="background-color: #068a06; color: white">Type & Wilaya</button>
+              </form>
+            </div> {% endcomment %}
+      </div>
+    </div>
+</div>
+</div>
+{%endblock%}
+ 
+ 
+

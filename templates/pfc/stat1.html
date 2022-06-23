@@ -1,0 +1,13 @@
+{% block chart %}
+{% load static %}
+
+    
+<img src="{% static 'images/chart.png' %}" style="
+/* Center vertically and horizontally */
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);animation: mymove 5s infinite;" id="imgchart" alt="">
+ 
+
+{% endblock chart %}

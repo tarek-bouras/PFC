@@ -1,0 +1,409 @@
+{%load static%}
+{% block contentee%}
+<div class="tab-content navv" id="v-pills-tabContent">
+<div class="tab-pane fade" id="v-pills-transform" role="tabpanel" aria-labelledby="v-pills-transform-tab" tabindex="0">
+ 
+<div class="row text-center" style="color: white;">
+  <div class="col-md-12">
+    <h6 class="display-6">
+      Collection & Techniques <br>
+    </h6>
+  </div>
+</div>
+ 
+  <div class="card" >
+      <div class="row text-center" style="padding-top: 3%;padding-bottom: 3%;">
+          <div class="col-md-4 text-center">
+            <form action="{% url 'col4' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn" style="background-color: green; color:white;">
+                Voir collection clients
+              </button>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <form action="{% url 'col5' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn" style="background-color: green; color:white;">
+                voir collection Produits
+              </button>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <form action="{% url 'col6' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn" style="background-color: green; color:white;">
+                voir collection Base données
+              </button>
+            </form>
+          </div>
+      </div>
+    </div>
+ 
+  <div class="row" style="padding-top: 2%;">
+    <div class="col-md-4">
+      <div class="card" style="padding: 3%;">
+        <h5 style="color: white;">clients</h5>
+        <ul class="list-group">
+        <form action="{% url 'col3' %}" method="post">
+            {% csrf_token %}  
+          <li class="list-group-item" style="background-color: transparent;border-color: white;border-width: 1px;">
+            <label class="form-check-label" for="flexCheckChecked5" style="color: white;">
+            <input class="form-check-input" type="checkbox" value="on" name="omise3" id="flexCheckChecked5" >
+            Valeurs omises
+          </label>
+        </li>
+        <li class="list-group-item" style="background-color: transparent;border-color: white;border-width: 1px;">
+          <label class="form-check-label" for="flexCheckChecked6" style="color: white;">
+            <input class="form-check-input" type="checkbox" value="on" name="concat3" id="flexCheckChecked6" >
+            Concaténation
+          </label>
+        </li>
+        <li class="list-group-item" style="background-color: transparent;border-color: white;border-width: 1px;">
+          <label class="form-check-label" for="flexCheckChecked7" style="color: white;">
+            <input class="form-check-input" type="checkbox" value="on" name="invalid3" id="flexCheckChecked7" >
+            invalid values
+          </label>
+        </li>
+       
+        <br><br><button type="submit"  class="btn " style="background-color: #068a06; color: white">Transformer</button><br><br>
+      </form>
+      </ul><br>
+    </div>
+    </div>
+      <div class="col-md-4">
+        <div class="card" style="padding: 3%;">
+          <h5 style="color: white;">Produits</h5>
+          <ul class="list-group">
+            <form action="{% url 'col1' %}" method="post">
+              {% csrf_token %}
+              <li class="list-group-item" style="background-color: transparent;border-color: white;border-width: 1px;">
+                <label class="form-check-label" for="flexCheckDefault1" style="color: white;">
+                <input class="form-check-input" type="checkbox" value="on" name="dedup2" id="flexCheckDefault1">
+                Deduplication
+              </label>
+            </li>
+            <li class="list-group-item" style="background-color: transparent;border-color: white;border-width: 1px;">
+              <label class="form-check-label" for="flexCheckChecked2" style="color: white;">
+                <input class="form-check-input" type="checkbox"value="on" name="omise2"  id="flexCheckChecked2" >
+                Valeurs omises
+              </label>
+            </li>
+            <li class="list-group-item" style="background-color: transparent;border-color: white;border-width: 1px;">
+              <label class="form-check-label" for="flexCheckChecked3" style="color: white;">
+                <input class="form-check-input" type="checkbox" value="on" name="concat2" id="flexCheckChecked3" >
+                Concaténation
+              </label>
+            </li>
+            <li class="list-group-item" style="background-color: transparent;border-color: white;border-width: 1px;">
+              <label class="form-check-label" for="flexCheckChecked4" style="color: white;">
+                <input class="form-check-input" type="checkbox" value="on" name="miss2" id="flexCheckChecked4" >
+                Missing values
+              </label>
+            </li>
+           
+            <br><br><button type="submit"  class="btn " style="background-color: #068a06; color: white">Transformer</button><br>
+          </form>
+        </ul>
+      </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" style="padding: 3%;">
+          <h5 style="color: white;">Base données</h5>
+          <ul class="list-group">
+            <form action="{% url 'col8' %}" method="post">
+              {% csrf_token %}
+              <li class="list-group-item" style="background-color: transparent;border-color: white;border-width: 1px;">
+                <label class="form-check-label" for="flexCheckDefaultb" style="color: white;">
+                <input class="form-check-input" type="checkbox" value="on" name="dedup1" id="flexCheckDefaultb">
+                Deduplication
+              </label>
+            </li>
+ 
+            <li class="list-group-item" style="background-color: transparent;border-color: white;border-width: 1px;">
+              <label class="form-check-label" for="flexCheckCheckedc" style="color: white;">
+                <input class="form-check-input" type="checkbox" value="on" name="concat1" id="flexCheckCheckedc" >
+                Concaténation
+              </label>
+            </li>
+            <li class="list-group-item" style="background-color: transparent;border-color: white;border-width: 1px;">
+              <label class="form-check-label" for="flexCheckCheckedd" style="color: white;">
+                <input class="form-check-input" type="checkbox" value="on" name="miss1" id="flexCheckCheckedd" >
+                Missing values
+              </label>
+            </li>
+           
+            <br><br><button type="submit"  class="btn " style="background-color: #068a06; color: white">Transformer</button><br><br><br>
+          </form>
+        </ul>
+        </div><br>
+      </div>
+  </div>
+             
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 text-center">
+        <h6 class="display-6" style="color: white;">
+          Modéle Dimensionnel <br> <i class="bi bi-star" style="color: white; font-size:4rem;"></i>
+        </h6>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+ 
+    <div class="row">
+      <div class="card" >
+        <div class="col-md-12 text-center">
+          <p style="padding: 2%;">
+            Ce modèle dimensionnel est décrit par tables de faits et des tables de dimensions, représentent le chfifre d'affaire/nombre de ventes / frais de livraisons par rapports aux plusieurs dimensions
+          </p>
+          <ul>
+            <li>Prix</li>
+            <li>Date</li>
+            <li>Genre</li>
+            <li>Géographique</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+      <div class="card" style="margin: 3%;">
+        <form action="{% url 'col7' %}" method="post">
+          {% csrf_token %}
+           
+          <div class="row" style="padding-top: 2%;">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center" style="background-color:rgba(255, 255, 255, 0.259);border-bottom-left-radius: 35px;border-top-right-radius:35px">
+              <label class="form-check-label" for="flexCheckDefault7" style="color: white;">
+                <input class="form-check-input" type="checkbox" value="on" name="qgender" id="flexCheckDefault7">
+                <p class="display-6">Genre <i class="bi bi-people-fill"></i></p>
+              </label>
+            </div>
+            <div class="col-md-5"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center">
+              <i class="bi bi-arrow-up-circle-fill"style="color:#00aeed; font-size:3rem"></i>
+            </div>
+            <div class="col-md-5"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2 text-center" style="background-color:rgba(255, 255, 255, 0.259);border-bottom-right-radius: 35px;border-top-left-radius:35px;">
+              <label class="form-check-label" for="flexCheckDefault8" style="color: white;margin-top: 25%;">
+                <input class="form-check-input" type="checkbox" value="on" name="qdate" id="flexCheckDefault8">
+                <p class="display-6">Date <i class="bi bi-calendar3"></i></p>
+              </label>
+            </div>
+            <div class="col-md-1"><i class="bi bi-arrow-left-circle-fill" style="color:#00aeed;font-size: 3rem;margin-top: 50%;"></i></div>
+            <div class="col-md-2 text-center" style="color:white;background-color: #b64a02c1;">
+              <p class="display-6" style="margin-top: 15%;">
+                 Chiffre d'affaire <i class="bi bi-cash-coin"></i>
+               
+              </p>
+            </div>
+            <div class="col-md-1"><i class="bi bi-arrow-right-circle-fill" style="color:#00aeed;font-size: 3rem;"></i></div>
+            <div class="col-md-2 text-center" style="background-color:rgba(255, 255, 255, 0.259);border-bottom-left-radius: 35px;border-top-right-radius:35px">
+              <label class="form-check-label" for="flexCheckDefault10" style="color: white;margin-top: 25%;">
+                <input class="form-check-input" type="checkbox" value="on" name="qtype" id="flexCheckDefault10">
+                <p class="display-6">Type <i class="bi bi-collection"></i></p>
+              </label>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5"></div>
+          <div class="col-md-2 text-center">
+            <i class="bi bi-arrow-down-circle-fill" style="color:#00aeed;font-size: 3rem;"></i>
+          </div>
+          <div class="col-md-5"></div>
+        </div>
+        <div class="row" >
+          <div class="col-md-5"></div>
+          <div class="col-md-2 text-center" style="background-color:#00aeed8a;background-color:rgba(255, 255, 255, 0.259);border-bottom-right-radius: 35px;border-top-left-radius:35px">
+            <label class="form-check-label" for="flexCheckDefault9" style="color: white;">
+              <input class="form-check-input" type="checkbox" value="on" name="qgeo" id="flexCheckDefault9">
+              <p class="display-6">Geo <i class="bi bi-pin-map"></i></p>
+            </label>
+          </div>
+          <div class="col-md-5"></div>
+        </div><br>
+        <div class="row text-center" style="padding-bottom: 2%;">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"><br><br>
+            <button type="submit" class="btn " style="background-color: #068a06; color: white" id="model">
+              afficher modèle
+            </button>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </form>
+    </div>
+     
+ 
+     <div class="card" style="margin: 3%;">
+        <form action="{% url 'col9' %}" method="post">
+          {% csrf_token %}
+           
+          <div class="row" style="padding-top: 2%;">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center" style="background-color:rgba(255, 255, 255, 0.259);border-bottom-left-radius: 35px;border-top-right-radius:35px">
+              <label class="form-check-label" for="flexCheckDefault11" style="color: white;">
+                <input class="form-check-input" type="checkbox" value="on" name="rgender" id="flexCheckDefault11">
+                <p class="display-6">Genre <i class="bi bi-people-fill"></i></p>
+              </label>
+            </div>
+            <div class="col-md-5"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center">
+              <i class="bi bi-arrow-up-circle-fill"style="color:#00aeed; font-size:3rem"></i>
+            </div>
+            <div class="col-md-5"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2 text-center" style="background-color:rgba(255, 255, 255, 0.259);border-bottom-right-radius: 35px;border-top-left-radius:35px;">
+              <label class="form-check-label" for="flexCheckDefault12" style="color: white;margin-top: 25%;">
+                <input class="form-check-input" type="checkbox" value="on" name="rdate" id="flexCheckDefault12">
+                <p class="display-6">Date <i class="bi bi-calendar3"></i></p>
+              </label>
+            </div>
+            <div class="col-md-1"><i class="bi bi-arrow-left-circle-fill" style="color:#00aeed;font-size: 3rem;margin-top: 50%;"></i></div>
+            <div class="col-md-2 text-center" style="color:white;background-color: #b64a02c1;">
+              <p class="display-6" style="margin-top: 15%;">
+                 Nombres ventes <i class="bi bi-cash-coin"></i>
+               
+              </p>
+            </div>
+            <div class="col-md-1"><i class="bi bi-arrow-right-circle-fill" style="color:#00aeed;font-size: 3rem;"></i></div>
+            <div class="col-md-2 text-center" style="background-color:rgba(255, 255, 255, 0.259);border-bottom-left-radius: 35px;border-top-right-radius:35px">
+              <label class="form-check-label" for="flexCheckDefault13" style="color: white;margin-top: 25%;">
+                <input class="form-check-input" type="checkbox" value="on" name="rtype" id="flexCheckDefault13">
+                <p class="display-6">Type <i class="bi bi-collection"></i></p>
+              </label>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5"></div>
+          <div class="col-md-2 text-center">
+            <i class="bi bi-arrow-down-circle-fill" style="color:#00aeed;font-size: 3rem;"></i>
+          </div>
+          <div class="col-md-5"></div>
+        </div>
+        <div class="row" >
+          <div class="col-md-5"></div>
+          <div class="col-md-2 text-center" style="background-color:#00aeed8a;background-color:rgba(255, 255, 255, 0.259);border-bottom-right-radius: 35px;border-top-left-radius:35px">
+            <label class="form-check-label" for="flexCheckDefault14" style="color: white;">
+              <input class="form-check-input" type="checkbox" value="on" name="rgeo" id="flexCheckDefault14">
+              <p class="display-6">Geo <i class="bi bi-pin-map"></i></p>
+            </label>
+          </div>
+          <div class="col-md-5"></div>
+        </div><br>
+        <div class="row text-center" style="padding-bottom: 2%;">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"><br><br>
+            <button type="submit" class="btn " style="background-color: #068a06; color: white" id="model">
+              afficher modèle
+            </button>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </form>
+    </div>
+
+    <div class="card" style="margin: 3%;">
+      <form action="{% url 'col10' %}" method="post">
+        {% csrf_token %}
+         
+        <div class="row" style="padding-top: 2%;">
+          <div class="col-md-5"></div>
+          <div class="col-md-2 text-center" style="background-color:rgba(255, 255, 255, 0.259);border-bottom-left-radius: 35px;border-top-right-radius:35px">
+            <label class="form-check-label" for="flexCheckDefault15" style="color: white;">
+              <input class="form-check-input" type="checkbox" value="on" name="lgender" id="flexCheckDefault15">
+              <p class="display-6">Genre <i class="bi bi-people-fill"></i></p>
+            </label>
+          </div>
+          <div class="col-md-5"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5"></div>
+          <div class="col-md-2 text-center">
+            <i class="bi bi-arrow-up-circle-fill"style="color:#00aeed; font-size:3rem"></i>
+          </div>
+          <div class="col-md-5"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-2 text-center" style="background-color:rgba(255, 255, 255, 0.259);border-bottom-right-radius: 35px;border-top-left-radius:35px;">
+            <label class="form-check-label" for="flexCheckDefault16" style="color: white;margin-top: 25%;">
+              <input class="form-check-input" type="checkbox" value="on" name="ldate" id="flexCheckDefault16">
+              <p class="display-6">Date <i class="bi bi-calendar3"></i></p>
+            </label>
+          </div>
+          <div class="col-md-1"><i class="bi bi-arrow-left-circle-fill" style="color:#00aeed;font-size: 3rem;margin-top: 50%;"></i></div>
+          <div class="col-md-2 text-center" style="color:white;background-color: #b64a02c1;">
+            <p class="display-6" style="margin-top: 15%;">
+               Frais livraison <i class="bi bi-truck"></i>
+             
+            </p>
+          </div>
+          <div class="col-md-1"><i class="bi bi-arrow-right-circle-fill" style="color:#00aeed;font-size: 3rem;"></i></div>
+          <div class="col-md-2 text-center" style="background-color:rgba(255, 255, 255, 0.259);border-bottom-left-radius: 35px;border-top-right-radius:35px">
+            <label class="form-check-label" for="flexCheckDefault17" style="color: white;margin-top: 25%;">
+              <input class="form-check-input" type="checkbox" value="on" name="ltype" id="flexCheckDefault17">
+              <p class="display-6">Type <i class="bi bi-collection"></i></p>
+            </label>
+          </div>
+          <div class="col-md-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-2 text-center">
+          <i class="bi bi-arrow-down-circle-fill" style="color:#00aeed;font-size: 3rem;"></i>
+        </div>
+        <div class="col-md-5"></div>
+      </div>
+      <div class="row" >
+        <div class="col-md-5"></div>
+        <div class="col-md-2 text-center" style="background-color:#00aeed8a;background-color:rgba(255, 255, 255, 0.259);border-bottom-right-radius: 35px;border-top-left-radius:35px">
+          <label class="form-check-label" for="flexCheckDefault18" style="color: white;">
+            <input class="form-check-input" type="checkbox" value="on" name="lgeo" id="flexCheckDefault18">
+            <p class="display-6">Geo <i class="bi bi-pin-map"></i></p>
+          </label>
+        </div>
+        <div class="col-md-5"></div>
+      </div><br>
+      <div class="row text-center" style="padding-bottom: 2%;">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"><br><br>
+          <button type="submit" class="btn " style="background-color: #068a06; color: white" id="model">
+            afficher modèle
+          </button>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </form>
+  </div>
+      <!-- <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+          <div class="buttonn">hello</i>
+            <div class="fb soc-but"><a class="back" href="#"><i class="fa fa-facebook"></i></a></div>
+            <div class="tw soc-but"><a class="back" href="https://twitter.com/kiyutin_k" target="_blank"><i class="fa fa-twitter"></i></a></div>
+            <div class="gp soc-but"><a class="back" href="#"><i class="fa fa-google-plus"></i></a></div>
+            <div class="vk soc-but"><a class="back" href="#"><i class="fa fa-vk"></i></a></div>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div> -->
+ 
+  </div>
+    </div>
+ 
+{% endblock%}
+ 
+

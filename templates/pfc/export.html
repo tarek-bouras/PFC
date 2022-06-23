@@ -1,0 +1,33 @@
+{%load static%}
+{% block contenteeee%}
+<div class="tab-content navv" id="v-pills-tabContent">
+<div class="tab-pane fade " id="v-pills-export" role="tabpanel" aria-labelledby="v-pills-export-tab" tabindex="0">
+     <div class="row">
+                <div class="col-md-4 text-center"></div>
+                <div class="col-md-4 text-center">
+                  <div class="share-button">
+                        <div class="share-button__back">
+                            <a class="share__link" href="{% url 'export1' %}" id="linkk" title="clients" target="_blank">
+                                <button type="button" class="btn " style="background-color: #da5c01"  >1er collection</button>
+       
+                            </a>
+                            <a class="share__link " href="{% url 'export2' %}" id="linkk" title="produits" target="_blank">
+                                <button type="button" class="btn " style="background-color: #da5c01">2ème collection</button>
+           
+                            </a>
+                            <a class="share__link" href="{% url 'export3' %}" id="linkk" title="BaseDonnées" target="_blank">
+                                <button type="button" class="btn" style="background-color: #da5c01">3ème collection</button>
+                            </a>
+                   
+                        </div>
+                        <div class="share-button__front">
+                        <p class="share-button__text">Exporter</p>
+                        </div>
+                  </div>
+                </div>
+                <div class="col-md-4 text-center"></div>
+       </div>
+</div>
+</div>
+{% endblock  %}
+

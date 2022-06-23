@@ -1,0 +1,43 @@
+{%load static%}
+{% block contente%}
+<div class="tab-content navv" id="v-pills-tabContent">
+<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
+
+
+  
+ 
+
+  <div class="row">
+                <div class="col-md-4 text-center">
+                </div>
+
+                <div class="col-md-4 text-center">
+                  <div class="share-button">
+                    <div class="share-button__back">
+                      <a class="share__link" href="{% url 'profilage1' %}" id="linkk" title="twitter" target="blank">
+                        <button type="button" class="btn " style="background-color: #da5c01" >1er collection</button>
+                         
+                      </a>
+                      <a class="share__link " href="{% url 'profilage2' %}" id="linkk" title="facebook" target="blank">
+                        <button type="button" class="btn " style="background-color: #da5c01">2ème collection</button>
+     
+                      </a>
+                      <a class="share__link" href="{% url 'profilage3' %}" id="linkk" title="google plus" target="blank">
+                        <button type="button" class="btn" style="background-color: #da5c01">3ème collection</button>
+                      </a>
+                     
+                    </div>
+                    <div class="share-button__front">
+                      <p class="share-button__text">Profiler</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-4 text-center">
+                </div>
+              </div>
+              </div>
+    </div>
+
+{% endblock%}
+

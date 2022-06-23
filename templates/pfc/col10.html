@@ -1,0 +1,30 @@
+{% block col10 %}
+{% load static %}
+ 
+<table  border="1" style="table-layout:auto;width:100%;font-size:15px;font-weight:bold;text-align: center;vertical-align: center;overflow-x: auto;font-style:bold;" id="tableaff">
+    <thead style="background-color: #04AA6D;color: white;">
+        <tr>
+            <td>
+                Type - Genre - Prix - Géographique
+            </td>
+            <td>
+            frais de livraison
+            </td>
+           
+        </tr>
+    </thead>
+    <tbody style=" background-color: rgb(186, 186, 186);color: black;font-size: 15px;font-weight:bold ">        
+        {% for i in listl %}
+        <tr>
+            <td>
+               {{i.id}}     
+            </td>
+            <td>
+                {{i.livraison}} 
+            </td>
+            </tr>
+            {% endfor %}
+</tbody>
+</table>
+ 
+{% endblock col10 %}

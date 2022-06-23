@@ -1,0 +1,33 @@
+{% block col8 %}
+
+<h></h>
+    <table  border="1" style="table-layout:auto;width:100%;font-size:15px;font-weight:bold;text-align: center;vertical-align: center;overflow-x: auto;font-style:bold;" id="tableaff">
+        <thead style="background-color: #04AA6D;color: white;">
+        <tr>
+          
+            <td>_id</td>
+            <td>nom type</td>
+            <td>idProduit</td>
+            <td>designation</td>
+            <td>prix</td>
+            <td>id idMarque</td>
+            <td></td>
+        </tr>
+
+        </thead>
+        <tbody style=" background-color: rgb(186, 186, 186);color: black;font-size: 15px;font-weight:bold ">
+        {% for elementbd in listbd %}
+
+            <tr>
+            {% for i in elementbd %}
+            
+                <td>
+                    {{ i }}
+                </td>
+            {% endfor %}
+                
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock col8 %}

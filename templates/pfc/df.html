@@ -1,0 +1,61 @@
+{% block  df %}
+{% load static %}
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <table border="1" style="table-layout:auto;width:100%;font-size:15px;font-weight:bold;text-align: center;vertical-align: center;overflow-x: auto;font-style:bold;" id="tableaff">
+                <thead style="background-color: #04AA6D;color: white;">
+                    <tr>
+                    <td>_id</td>
+                    <td>n</td>
+                    <td>n commande</td>
+                    <td>date creation</td>
+                    <td>date expedition</td>
+                    <td>dernier statut</td>
+                    <td>date dernier statut</td>
+                    <td>date livraison/echec</td>
+                    <td>nom</td>
+                    <td>Gender</td>
+                    <td>telephone</td>
+                    <td>addresse</td>
+                    <td>commune</td>
+                    <td>wilaya</td>
+                    <td>designation</td>
+                    <td>prix</td>
+                    <td>type</td>
+                    <td>brand</td>
+                    <td>frais livraison</td>
+                    <td>freeshipping</td>
+                    <td>paiement</td>
+                    <td>id importation</td>
+                    <td>type colis</td>
+                    <td>premiere tentative</td>
+                    <td>date premiere tentative</td>
+                    <td>deuxieme tentative</td>
+                    <td>date deuxieme tentative</td>
+                    <td>troisieme tentative</td>
+                    <td>date troisieme tentative</td>
+                    <td>prenom</td>
+                    <td>prenom & nom </td>
+            
+                    </tr>
+                </thead>
+                <tbody style=" background-color: rgb(186, 186, 186);color: black;font-size: 15px;font-weight:bold ">
+                    {% for elementtt in lists %}
+             
+                        <tr> 
+                        {% for j in elementtt %}
+                            <td>
+                               {{j}}
+                            </td> 
+                        {% endfor %}  
+                        </tr>
+                    {% endfor %} 
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+{% endblock df %}

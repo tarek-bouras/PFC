@@ -1,0 +1,34 @@
+{% block dedup1 %}
+
+<h></h>
+    <table  border="1" style="table-layout:auto;width:100%;font-size:15px;font-weight:bold;text-align: center;vertical-align: center;overflow-x: auto;font-style:bold;" id="tableaff">
+        <thead style="background-color: #04AA6D;color: white;">
+        <tr>
+            <td>id</td>
+            <td>product name</td>
+            <td>type</td>
+            <td>brand</td>
+            <td>url</td>
+            <td>priec</td>
+            <td>proceols</td>
+            <td>percentage</td>
+            <td>__v</td>
+        </tr>
+
+        </thead>
+        <tbody style=" background-color: rgb(186, 186, 186);color: black;font-size: 15px;font-weight:bold ">
+        {% for element in list %}
+
+            <tr>
+            {% for i in element %}
+            
+                <td>
+                    {{ i }}
+                </td>
+            {% endfor %}
+            
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock dedup1 %}

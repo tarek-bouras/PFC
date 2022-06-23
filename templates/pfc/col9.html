@@ -1,0 +1,30 @@
+{% block col9 %}
+{% load static %}
+ 
+<table  border="1" style="table-layout:auto;width:100%;font-size:15px;font-weight:bold;text-align: center;vertical-align: center;overflow-x: auto;font-style:bold;" id="tableaff">
+    <thead style="background-color: #04AA6D;color: white;">
+        <tr>
+            <td>
+                Type - Genre - Prix - Géographique
+            </td>
+            <td>
+            Nombres ventes
+            </td>
+           
+        </tr>
+    </thead>
+    <tbody style=" background-color: rgb(186, 186, 186);color: black;font-size: 15px;font-weight:bold ">        
+        {% for i in listrd %}
+        <tr>
+            <td>
+               {{i.id}}     
+            </td>
+            <td>
+                {{i.Nbrventes}} 
+            </td>
+            </tr>
+            {% endfor %}
+</tbody>
+</table>
+ 
+{% endblock col9 %}

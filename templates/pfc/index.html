@@ -1,0 +1,475 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Dashboard</title>
+</head>
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-square-fill" style="font-size: 2rem; color:white"></i></button>
+  <nav class="navbar navbar-expand-lg " id="navbar">
+    <div class="container-fluid">
+
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <!-- <a class="navbar-brand" href="#" style="color: white;"></a> -->
+            <h6 class="display-6"  style="color: white;"> DATANALYST Space</h6>
+          </div>
+
+          <div class="col-md-4"></div>
+
+          <div class="col-md-4">
+
+            <div class="row">
+              
+              
+
+              
+              <div class="col-md-6">
+                <div id = "clock" onload="currentTime()"></div>
+              </div>
+
+              <div class="col-md-2">
+                <a href="!#">
+                  <i class="bi bi-gear-fill" style="font-size: 2rem; color: white;"></i>
+                </a>
+              </div>
+
+              <div class="col-md-2">
+                <a href="#!">
+                  <i class="bi bi-info-circle" style="font-size: 2rem; color: white;"></i>
+                </a>
+              </div>
+
+              <div class="col-md-2">
+                <a href="#!">
+                  <i class="bi bi-person-lines-fill" style="font-size: 2rem; color: white;"></i>
+                </a>
+              </div>
+              
+              </div>
+
+            
+            
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row mb-3">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      
+    </div>
+  </nav>
+      
+  <div class="container-fluid" >
+    <div class="row" style="padding-top: 2%;">
+      <div class="col-md-2">
+        <div class="d-flex align-items-start navv" >
+          <div class="nav nav-tabs flex-column me-3 " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Acceuil</button>
+            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">profiler vos données </button>
+            <button class="nav-link" id="v-pills-transform-tab" data-bs-toggle="pill" data-bs-target="#v-pills-transform" type="button" role="tab" aria-controls="v-pills-transform" aria-selected="false">transformer vos données </button>
+            <button class="nav-link" id="v-pills-stats-tab" data-bs-toggle="pill" data-bs-target="#v-pills-stats" type="button" role="tab" aria-controls="v-pills-stats" aria-selected="false">statistiques</button>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-10">
+        <div class="tab-content navv" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+              <div class="row ">
+                <div class="col-md-12"> 
+                  <div  id="descriptionCard">
+
+                    <p class="text-center" id="descp">
+  
+                      Afin d'analyser vos données plus facilement que jamais, l'espace DatAnalyst met à votre disposition les meilleurs outils et technologies qui vous aident à agréger, analyser et visualiser vos données. 
+                      
+                      Cette application ne nécessite aucune installation, elle est disponible gratuitement sur le Web. <br> <br>
+                      
+                      DatAnalyst peut vous aider à connecter des ensembles de données différents et hétérogènes, à nettoyer et à transformer des données et à créer des tableaux ou des graphiques pour fournir des données visuelles 
+                    
+                    </p>
+                  </div>
+                  
+                </div>
+               <br>
+              </div>
+              <div class="row" style="padding-top: 3%;">
+                <div class="col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      Total des ventes
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h5 class="card-title">7,951,048 DA</h5>
+                          <p>Le chiffre d'affaire totale pendant le mois de mars</p>
+                        </div>
+                        <div class="col-md-6 text-right">
+                          <img src="{% static 'images/img5.png' %}" id="cardImg" alt="">
+                        </div>
+                      </div>
+                      <br>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-header">
+                      Wilaya 
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h5 class="card-title">Alger</h5>
+                          <p>1,036,148 DA</p>
+                          <h5 class="card-title">Nombre de commande</h5>
+                          <p>35</p>
+                        </div>
+                        <div class="col-md-6 text-right">
+                          <i class="bi bi-graph-up-arrow" id="icon" style="font-size: 4rem;color: #08a8b7;"></i><br><br><br>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-header">
+                      Vente par genre 
+                    </div>
+                    <div class="card-body">
+                      
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 23%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 74%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 3%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div> 
+                      <div class="row" style="padding-top: 2%;">
+                        <div class="col-md-2"><i class="bi bi-circle-fill" style="color: blue;"></i></div>
+                        <div class="col-md-10">Femme</div>
+                      </div><br> 
+                      <div class="row">
+                        <div class="col-md-2"><i class="bi bi-circle-fill" style="color: green;"></i></div>
+                        <div class="col-md-10">Homme</div>
+                      </div><br>
+                      <div class="row">
+                        <div class="col-md-2"><i class="bi bi-circle-fill" style="color: red;"></i></div>
+                        <div class="col-md-10">Inconnu</div> <br><br>
+                      </div>
+                          </div>   
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="row" style="padding-top: 2%;">
+                    <div class="cardd">
+                      <canvas id="myChart" style="width:100%;"></canvas>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <i class="bi bi-square-fill" style="color: brown;"></i><p id="mode" style="color: black;">  Mode Homme</p>
+                        </div>
+                        <div class="col-md-4">
+                          <i class="bi bi-square-fill" style="color: orange;"></i><p id="mode" style="color: black;">  Mode Femme</p>
+                        </div>
+                        <div class="col-md-4"></div>
+                      </div>
+                    </div>
+                    
+                    <div class="row" style="padding-top: 2%;">
+                      <div class="col-md-6">
+                        <div class="card">
+                          <canvas id="myChartt" style="width:100%;"></canvas>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card" style="padding: 2%;">
+                          <h5 class="card-title">
+                            Meilleurs vente des marques
+                          </h5>
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                
+                                  <img src="{% static 'images/img9.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                  
+                                </figure>
+                              </div>
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{% static 'images/img10.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                  
+                                </figure>
+                              </div>
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{% static 'images/img11.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                  
+                                </figure>
+                              </div>
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{% static 'images/img12.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                  
+                                </figure>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{% static 'images/img13.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                  
+                                </figure>
+                              </div>
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{% static 'images/img14.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                  
+                                </figure>
+                              </div>
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{% static 'images/img15.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                  
+                                </figure>
+                              </div>
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{% static 'images/img16.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                  
+                                </figure>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="card">
+                          <div id="myPlot" style="width: 100%;max-width:fit-content"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
+                  <div class="row">
+                    <div cl ass="col-md-4">
+                      
+                      <div class="share-button">
+                        <div class="share-button__back">
+                          <a class="share__link" href="#" id="linkk" title="twitter">
+                            <button type="button" class="btn btn-warning">Profiler 1ere Collection</button>
+       
+                          </a>
+                          <a class="share__link " href="#" id="linkk" title="facebook">
+                            <button type="button" class="btn btn-warning">Profiler 2eme Collection</button>
+          
+                          </a>
+                          <a class="share__link" href="#" id="linkk" title="google plus">
+                            <button type="button" class="btn btn-warning">Profiler 3eme Collection</button>
+         
+                          </a>
+                          
+                        </div>
+                        <div class="share-button__front">
+                          <p class="share-button__text">Profiler</p>
+                        </div>
+                      </div>
+
+    
+                    </div>
+                    <div class="col-md-4">
+    
+                    </div>
+                    <div class="col-md-4">
+    
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-transform" role="tabpanel" aria-labelledby="v-pills-transform-tab" tabindex="0">
+                  <div class="row">
+                    <table class="table table-success table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">First</th>
+                          <th scope="col">Last</th>
+                          <th scope="col">Handle</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td colspan="2">Larry the Bird</td>
+                          <td>@twitter</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-stats" role="tabpanel" aria-labelledby="v-pills-stats-tab" tabindex="0">S</div>
+    
+              </div>
+
+            </div>
+            
+          </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <script>
+    var xValues = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{ 
+      data: [8,3,32,42,15,30,21,9,13,5,29,38,4,1,15,16,40,37,32,29,28,10,5,10,15,20,25,15],
+      borderColor: "brown",
+      fill: false
+    }, { 
+      data: [11,37,43,12,12,15,2,9,17,23,39,25,11,07,12,16,02,45,32,12,28,7,32,9,2,14,20,11],
+      borderColor: "orange",
+      fill: false
+    }]
+  },
+  options: {
+    legend: {display: false}
+  }
+});
+var xValuess = ["Mode Femme", "Mode Homme", "TV", "Parfums", "Pc"];
+var yValuess = [33, 22, 17, 14, 14];
+var barColorss = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+
+new Chart("myChartt", {
+  type: "pie",
+  data: {
+    labels: xValuess,
+    datasets: [{
+      backgroundColor: barColorss,
+      data: yValuess
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Top 5 Produits"
+    }
+  }
+});
+
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+var xArray = ["Alger", "TiziOuzou", "Adrar", "Blida"];
+var yArray = [36, 9, 16, 08];
+
+var data = [{
+  x:xArray,
+  y:yArray,
+  type:"bar"
+}];
+
+var layout = {title:"Nombre des produits non livrés "};
+
+Plotly.newPlot("myPlot", data, layout);
+
+function currentTime() {
+  let date = new Date(); 
+  let hh = date.getHours();
+  let mm = date.getMinutes();
+  let ss = date.getSeconds();
+  let session = "AM";
+
+  if(hh === 0){
+      hh = 12;
+  }
+  if(hh > 12){
+      hh = hh - 12;
+      session = "PM";
+   }
+
+   hh = (hh < 10) ? "0" + hh : hh;
+   mm = (mm < 10) ? "0" + mm : mm;
+   ss = (ss < 10) ? "0" + ss : ss;
+    
+   let time = hh + ":" + mm + ":" + ss + " " + session;
+
+  document.getElementById("clock").innerText = time; 
+  let t = setTimeout(function(){ currentTime() }, 1000);
+}
+
+currentTime();
+  </script>
+
+</body>
+</html>

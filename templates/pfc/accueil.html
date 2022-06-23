@@ -1,0 +1,194 @@
+ 
+{%load static%}
+{% block content%}
+<div class="tab-content navv" id="v-pills-tabContent">
+<div class="tab-pane show fade " id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+ <div class="row ">
+                <div class="col-md-12">
+                  <div  id="descriptionCard">
+ 
+                    <p class="text-center" id="descp">
+ 
+                      Afin d'analyser vos données plus facilement que jamais, l'espace DatAnalyst met à votre disposition les meilleurs outils et technologies qui vous aident à agréger, analyser et visualiser vos données.
+                     
+                      Cette application ne nécessite aucune installation, elle est disponible gratuitement sur le Web. <br> <br>
+                     
+                      DatAnalyst peut vous aider à connecter des ensembles de données différents et hétérogènes, à nettoyer et à transformer des données et à créer des tableaux ou des graphiques pour fournir des données visuelles
+                   
+                    </p>
+                  </div>
+                 
+                </div>
+               <br>
+ </div>
+  <div class="row" style="padding-top: 3%;">
+                <div class="col-md-6">
+                  <div class="card">
+                    <div class="card-header">
+                      Total des ventes
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h5 class="card-title">7,951,048 DA</h5>
+                          <p>Le chiffre d'affaire totale pendant le mois de mars</p>
+                        </div>
+                        <div class="col-md-6 text-right">
+                          <img src="{% static 'images/img5.png'%}" id="cardImg" alt="">
+                        </div>
+                      </div>
+                      <br>
+                    </div>
+                   
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-header">
+                      Wilaya
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h5 class="card-title">Alger</h5>
+                          <p>1,036,148 DA</p>
+                          <h6 class="card-title">Nombre de commande</h6>
+                          <p>35</p>
+                        </div>
+                        <div class="col-md-6 text-right">
+                          <i class="bi bi-graph-up-arrow" id="icon" style="font-size: 4rem;color: #08a8b7;"></i><br><br><br><br>
+                        </div>
+                      </div>
+                     
+                    </div>
+                   
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-header">
+                      Vente par genre
+                    </div>
+                    <div class="card-body">
+                     
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 23%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 74%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 3%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" style="padding-top: 2%;">
+                        <div class="col-md-2"><i class="bi bi-circle-fill" style="color: blue;"></i></div>
+                        <div class="col-md-10">Femme</div>
+                      </div><br>
+                      <div class="row">
+                        <div class="col-md-2"><i class="bi bi-circle-fill" style="color: green;"></i></div>
+                        <div class="col-md-10">Homme</div>
+                      </div><br>
+                      <div class="row">
+                        <div class="col-md-2"><i class="bi bi-circle-fill" style="color: red;"></i></div>
+                        <div class="col-md-10">Inconnu</div> <br><br>
+                      </div>
+                          </div>  
+                      </div>
+                    </div>
+                   
+                  </div>
+<div class="row" style="padding-top: 2%;">
+                    <div class="cardd">
+                      <canvas id="myChart" style="width:100%;"></canvas>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <i class="bi bi-square-fill" style="color: brown;"></i><p id="mode" style="color: white;">  Mode Homme</p>
+                        </div>
+                        <div class="col-md-4">
+                          <i class="bi bi-square-fill" style="color: orange;"></i><p id="mode" style="color: white;">  Mode Femme</p>
+                        </div>
+                        <div class="col-md-4"></div>
+                      </div>
+                    </div>
+                   
+                    <div class="row" style="padding-top: 2%;">
+                      <div class="col-md-6">
+                        <div class="card">
+                          <canvas id="myChartt" style="width:100%;"></canvas>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card" style="padding: 2%;">
+                          <h5 class="card-title">
+                            Meilleurs vente des marques
+                          </h5>
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{%static 'images/img9.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                 
+                                </figure>
+                              </div>
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{%static 'images/img10.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                 
+                                </figure>
+                              </div>
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{%static 'images/img11.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                 
+                                </figure>
+                              </div>
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{%static 'images/img12.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                 
+                                </figure>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{%static 'images/img13.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                 
+                                </figure>
+                              </div>
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{%static 'images/img14.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                 
+                                </figure>
+                              </div>
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{%static 'images/img15.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                 
+                                </figure>
+                              </div>
+                              <div class="col-md-3">
+                                <figure class="figure">
+                                  <img src="{%static 'images/img16.png'%}" class="figure-img img-fluid rounded" alt="...">
+                                 
+                                </figure>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="card">
+                          <div id="myPlot" style="width: 100%;max-width:fit-content"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  </div>
+            </div>
+            </div>
+    </div>
+
+{% endblock%}
+
